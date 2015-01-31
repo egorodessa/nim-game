@@ -1,21 +1,21 @@
-puts 'Это игра Ним, название сложное, а правила легкие.'
-puts 'У нас 2 игрока, вы и я.'
-puts 'Всего 21 конфета. За раз можно брать от 1 до 5 конфет.'
-puts 'Кто взял последний, тот и выиграл.'
+puts 'This game called Nim. The name is strange, but the rules are easy.'
+puts 'We have two players: you and me.'
+puts 'We have 21 candies at the center of the table. For every turn each can take only 1-5 candies.'
+puts 'The last players which take candies is winners. Start!'
 candies=21
 
 while candies!=0 do
-	puts 'Ваш ход. Осталось ' + candies.to_s + ' конфет.'
-	puts 'Введите количество конфет которые вы забираете(от 1 до 5):'
+	puts 'There are ' + candies.to_s + ' candies left. Your turn.'
+	puts 'Write your choose (1-5 candies):'
 	take = gets.to_i
 	candies = candies - take
 
 	if candies==0
-		puts 'Вы победили.'
+		puts 'You are win.'
 		break
 	end
 
-	puts 'Вы взяли '+take.to_s+' конфет. Осталось ' + candies.to_s + ' конфет.'
+	puts 'You took '+take.to_s+' candies. There are ' + candies.to_s + ' candies left.'
 	
 	if candies >5 
 		take = rand(4)+1
@@ -24,10 +24,10 @@ while candies!=0 do
 	end
 
 	candies = candies - take
-	puts 'Я взял '+take.to_s+' конфет. Осталось '+candies.to_s+'.'
+	puts 'I took '+take.to_s+' candies. There are '+candies.to_s+' candies left.'
 
 	if candies == 0
-		puts 'Я победил. Ура.'
+		puts 'I am winner!'
 		break
 	end
 end
