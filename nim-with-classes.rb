@@ -1,15 +1,17 @@
 class Nimplayer
-	def pname(name)
-		@name=name
-	end
-	def hod
-	end
-	def win
-	end
+
+  attr_reader :name # this does a lot of what you were trying to do by hand...
+
+  def initialize(name)
+    @name = name
+  end
+
 end
 
-me = Nimplayer.new
-comp = Nimplayer.new
-me.pname gets.to_s
-puts me.pname
+######
 
+print "Enter test player's name: "
+player_name = gets.chomp
+test_player = Nimplayer.new(player_name)
+
+puts "Reading Nimplayer.name: #{ test_player.name }"
